@@ -1,0 +1,4 @@
+:global(.ant-layout).layout_main {
+    min-height: 100vh;
+    overflow-x: hidden;
+}

@@ -7,7 +7,9 @@ import { store } from '@redux/configure-store';
 import { MainPage } from './pages';
 
 import 'normalize.css';
-import './index.css';
+import 'antd/dist/antd.css';
+import './index.scss';
+import { LayoutMain } from './layouts/layout-main';
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
@@ -17,7 +19,9 @@ root.render(
         <Provider store={store}>
             <HashRouter>
                 <Routes>
-                    <Route path='/' element={<MainPage />} />
+                    <Route element={<LayoutMain />}>
+                        <Route path='/' element={<MainPage />} />
+                    </Route>
                 </Routes>
             </HashRouter>
         </Provider>
