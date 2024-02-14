@@ -1,4 +1,7 @@
 .card {
+    max-width: 240px;
+    width: 100%;
+
     .title {
         line-height: 130%;
     }
@@ -36,6 +39,18 @@
         .ant-btn-link {
             color: var(--character-light-title-85);
             padding: 7px 11px;
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .card {
+        max-width: 100%;
+
+        :global {
+            .ant-card-head-title {
+                text-align: center;
+            }
         }
     }
 }

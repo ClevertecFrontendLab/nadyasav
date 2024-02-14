@@ -19,7 +19,7 @@ export const Header: React.FC = () => (
             <Title>Приветствуем тебя в CleverFit — приложении,<br/> которое поможет тебе добиться своей мечты!</Title>
             <div>
                 <Menu mode="horizontal" triggerSubMenuAction="click">
-                    <Menu.SubMenu key="SubMenu" title="Настройки" icon={<SettingOutlined />}>
+                    <Menu.SubMenu className={styles.header__submenu} key="SubMenu" title="Настройки" icon={<SettingOutlined />}>
                         <Menu.Item>item 1</Menu.Item>
                         <Menu.Item>item 2</Menu.Item>
                         <Menu.Item>item 3</Menu.Item>

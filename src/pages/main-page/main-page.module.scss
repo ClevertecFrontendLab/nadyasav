@@ -82,3 +82,34 @@
         padding: 9px 15px;
     }
 }
+
+@media screen and (max-width: 540px) {
+    .main {
+        &__inner {
+            padding: 24px 16px 42px 16px;
+        }
+    }
+
+    .main__content {
+        &_cards {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        :global {
+            .ant-card-body {
+                padding: 16px;
+            }
+        }
+    }
+
+    .main__bottom {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .main__bottom_reviews {
+        order: 2;
+    }
+}
