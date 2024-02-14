@@ -1,0 +1,43 @@
+.card {
+    width: 100%;
+    text-align: center;
+
+    &__icon {
+        margin-right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 130%;
+        color: var(--primary-light-6);
+        display: flex;
+        justify-content: center;
+
+        svg path{
+            transition: 0.1s all ease-in-out;
+        }
+
+        &:hover {
+            svg path{
+                fill: #40a9ff;
+                transition: 0.1s all ease-in-out;
+            }
+        }
+    }
+
+    :global {
+        .ant-card-head {
+            min-height: 45px;
+        }
+        .ant-card-head-title {
+            padding: 12px 0;
+            line-height: 130%;
+        }
+        .ant-card-body {
+            padding: 17px 24px;
+        }
+    }
+}
