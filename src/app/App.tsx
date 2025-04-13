@@ -1,33 +1,26 @@
-import './App.css';
+import { Route, Routes } from 'react-router';
 
-import { useState } from 'react';
-
-import reactLogo from '~/assets/react.svg';
+import AppLayout from '~/layouts/appLayout/AppLayout';
+import MainLayout from '~/layouts/mainLayout/MainLayout';
+import CollectionPage from '~/pages/collectionPage/CollectionPage';
+import MainPage from '~/pages/mainPage/MainPage';
+import RecipeCategoryPage from '~/pages/recipeCategoryPage/RecipeCategoryPage';
 import { useGetPostsQuery } from '~/query/services/posts.ts';
 
 function App() {
-    const [count, setCount] = useState(0);
     const { data: _data, isLoading: _isLoading } = useGetPostsQuery();
 
     return (
-        <>
-            <div>
-                <a href='https://vite.dev' target='_blank'>
-                    <img src='/vite.svg' className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-        </>
+        <Routes>
+            <Route path='/' element={<AppLayout />}>
+                <Route element={<MainLayout />}>
+                    <Route index element={<MainPage />} />
+                    <Route path='/:category' element={<RecipeCategoryPage />} />
+                    <Route path='/:category/:subcategory/*' element={<RecipeCategoryPage />} />
+                    <Route path='/collection' element={<CollectionPage />} />
+                </Route>
+            </Route>
+        </Routes>
     );
 }
 
